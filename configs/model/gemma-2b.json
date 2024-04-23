@@ -1,0 +1,9 @@
+{
+    "source": "huggingface",
+    "name": "google/gemma-2b-it",
+    "is_chat": true,
+    "instantiation": {
+        "torch_dtype": "torch.float16"
+    },
+    "size": 2
+}

@@ -1,0 +1,17 @@
+{
+    "name": "bea",
+    "code_dir": "/home/koutchc1/llmeval",
+    "save_dir": "WORK_DIR/experiments/llmeval/bea",
+    "grids":
+    [
+        {
+            "model": [
+                "llama-7b", "codellama-7b", "mistral", "zephyr_beta", "gemma-7b",
+                "gpt-3.5-turbo", "gpt-4-turbo", 
+                "tiny_llama", "gemma-2b"
+            ],
+            "dataset": ["falconcode"],
+            "task": ["repair", "feedback", "greedy_repair"]
+        }
+    ]
+}

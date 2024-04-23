@@ -1,0 +1,10 @@
+{
+    "name": "falconcode",
+    "subset": "",
+    "path": "WORK_DIR/datasets/falconcode/",
+    "reprocess": false,
+    "processing": {
+        "remove_zero_passing": true,
+        "select_last": true
+    }
+}

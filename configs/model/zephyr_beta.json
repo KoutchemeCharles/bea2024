@@ -1,0 +1,9 @@
+{
+    "source": "huggingface",
+    "name": "HuggingFaceH4/zephyr-7b-beta",
+    "is_chat": true,
+    "instantiation": {
+        "torch_dtype": "torch.bfloat16"
+    },
+    "size": 7
+}

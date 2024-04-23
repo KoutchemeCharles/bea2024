@@ -1,0 +1,51 @@
+{
+    "name": "tiny_llama_repair_falconcode",
+    "save_dir": "WORK_DIR/experiments/llmeval/bea",
+    "agent": {
+        "source": "huggingface",
+        "name": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+        "is_chat": true,
+        "size": 1.1
+    },
+    "dataset": {
+        "name": "falconcode",
+        "subset": "",
+        "path": "WORK_DIR/datasets/falconcode/",
+        "reprocess": false,
+        "processing": {
+            "remove_zero_passing": true,
+            "select_last": true
+        }
+    },
+    "task": {
+        "name": "repair",
+        "instructions": [
+            {
+                "role": "user",
+                "content": "Below is a problem statement and an incorrect program written by a student. Repair the student program with as few changes as possible such that the corrected program fulfills the requirements of the problem description. Write the corrected Python code between ```python and ```.\n{prompt}\n**INCORRECT CODE:**\n```python\n{source_code}\n```\n\n\n"
+            }
+        ],
+        "extract": [
+            "\n```\n\n\n",
+            "```python",
+            "```"
+        ],
+        "evaluation": [
+            {
+                "type": "metric",
+                "name": "pass_at_k"
+            },
+            {
+                "type": "metric",
+                "name": "rouge_at_k"
+            }
+        ],
+        "hyperparameters": {
+            "n": 20,
+            "top_p": 0.95,
+            "temperature": 0.2,
+            "max_tokens": 1024
+        }
+    },
+    "seed": 32
+}

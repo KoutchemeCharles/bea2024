@@ -1,0 +1,5 @@
+{
+    "source": "openai",
+    "name": "gpt-4",
+    "is_chat": true
+}
